@@ -18,18 +18,14 @@ import javax.servlet.http.HttpServletRequest;
 public class MybatisController {
     @Autowired
     private UserServiceI userServiceI;
-    private  static int a = 100;
 
     @RequestMapping("")
     public String root(HttpServletRequest request) {
-        System.out.println("controller开始：");
-        System.out.println("***********************");
+        System.out.println("**********开始*************");
         User user = new User();
-        user.setId(a++);
         user.setName("test1");
         userServiceI.add(user);
         request.setAttribute("user",user);
-        System.out.println("**********结束*************");
         return "/pages/reglog/test1.jsp";
     }
 }
