@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:annotation-config/>
+
+    <context:component-scan base-package="com.sidlu.controller"/>
+    <context:component-scan base-package="com.sidlu.dao"/>
+    <context:component-scan base-package="com.sidlu.service"/>
+
+    <mvc:annotation-driven enable-matrix-variables="true">
+
+        <mvc:message-converters>
+            <!-- default StringHttpMessageConverter, solve encoding problem -->
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg value="UTF-8"/>
+                <property name="writeAcceptCharset" value="false"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!-- 启动AOP支持 -->
+    <aop:aspectj-autoproxy/>
+
+
+    <!--&lt;!&ndash;数据源&ndash;&gt;-->
+    <!--<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">-->
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+        <!--<property name="url" value="jdbc:mysql://localhost:3306/bsqql123"/>-->
+        <!--<property name="username" value="root"/>-->
+        <!--<property name="password" value="bsqql123"/>-->
+        <!--&lt;!&ndash; 初始化连接大小 &ndash;&gt;-->
+        <!--<property name="initialSize" value="0" />-->
+        <!--&lt;!&ndash; 连接池最大使用连接数量 &ndash;&gt;-->
+        <!--<property name="maxActive" value="20" />-->
+        <!--&lt;!&ndash; 连接池最大空闲 &ndash;&gt;-->
+        <!--<property name="maxIdle" value="20" />-->
+        <!--&lt;!&ndash; 连接池最小空闲 &ndash;&gt;-->
+        <!--<property name="minIdle" value="0" />-->
+        <!--&lt;!&ndash; 获取连接最大等待时间 &ndash;&gt;-->
+        <!--<property name="maxWait" value="60000" />-->
+    <!--</bean>-->
+
+
+    <!--&lt;!&ndash; mybatis文件配置，扫描所有mapper文件 &ndash;&gt;-->
+    <!--<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" p:dataSource-ref="dataSource"-->
+          <!--p:configLocation="classpath:mybatis-config.xml"-->
+          <!--p:mapperLocations="classpath:com/sidlu/dao/mapping/*.xml"/>-->
+
+    <!--&lt;!&ndash; spring与mybatis整合配置，扫描所有dao &ndash;&gt;-->
+    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:basePackage="com.sidlu.dao.dao"-->
+          <!--p:sqlSessionFactoryBeanName="sqlSessionFactory"/>-->
+
+
+    <!--<aop:config>-->
+    <!--&lt;!&ndash;此处表示使用AspectJ表达式来定义切入点&ndash;&gt;-->
+    <!--<aop:pointcut id="pc" expression="execution(* cn.aop..*.*(..))"></aop:pointcut>-->
+    <!--&lt;!&ndash;定义切入点处理的程序类（自定义类，但是需要注册操作方法）&ndash;&gt;-->
+    <!--<aop:aspect ref="actionServiceAspect">-->
+    <!--&lt;!&ndash;定义针对某一个切入点执行的操作方法，此时用myBefore来进行处理&ndash;&gt;-->
+    <!--<aop:before method="myBefore" pointcut-ref="pc"></aop:before>-->
+    <!--<aop:after method="myAfter" pointcut-ref="pc"></aop:after>-->
+    <!--</aop:aspect>-->
+
+    <!--</aop:config>-->
+
+    <mvc:default-servlet-handler/>
+
+    <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="viewNames" value="*.jsp"/>
+        <property name="cache" value="true"/>
+        <property name="order" value="1"/>
+    </bean>
+</beans>
