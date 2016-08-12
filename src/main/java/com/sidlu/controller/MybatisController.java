@@ -23,9 +23,15 @@ public class MybatisController {
     public String root(HttpServletRequest request) {
         System.out.println("**********开始*************");
         User user = new User();
-        user.setName("test1");
+        user.setName("test7");
         userServiceI.add(user);
         request.setAttribute("user",user);
         return "/pages/reglog/test1.jsp";
+    }
+    @RequestMapping("")
+    public String tesk(HttpServletRequest request) {
+        System.out.println("**********开始*************");
+
+        return "/pages/reglog/test2.jsp";
     }
 }
