@@ -21,6 +21,7 @@ public class MybatisController {
 
     @RequestMapping("")
     public String root(HttpServletRequest request) {
+        System.out.println();
         System.out.println("**********开始*************");
         User user = new User();
         user.setName("test7");
