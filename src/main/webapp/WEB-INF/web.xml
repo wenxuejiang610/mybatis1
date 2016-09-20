@@ -11,7 +11,6 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-
         <param-value>classpath:spring-mybatis.xml</param-value>
     </context-param>
     <listener>
@@ -47,6 +46,5 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
 
 </web-app>

@@ -21,15 +21,15 @@ public class MybatisController {
 
     @RequestMapping("")
     public String root(HttpServletRequest request) {
-        System.out.println();
+        System.out.println("Hello");
         System.out.println("**********开始*************");
-        User user = new User();
-        user.setName("test7");
-        userServiceI.add(user);
-        request.setAttribute("user",user);
+        //User user = new User();
+        //user.setName("test7");
+        //userServiceI.add(user);
+        //request.setAttribute("user",user);
         return "/pages/reglog/test1.jsp";
     }
-    @RequestMapping("")
+    @RequestMapping("t1")
     public String tesk(HttpServletRequest request) {
         System.out.println("**********开始*************");
 
