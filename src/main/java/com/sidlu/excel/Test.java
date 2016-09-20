@@ -16,9 +16,6 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) throws IOException {
 
-        //创建excel
-        //createExcel("test", "sheet1");
-
         //读取excel文件
         List<List<HSSFCell>> allRows = getExcelToList("d:\\这个是excel名称.xls");
 
