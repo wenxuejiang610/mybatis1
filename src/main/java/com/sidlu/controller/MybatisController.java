@@ -29,10 +29,10 @@ public class MybatisController {
         request.setAttribute("user",user);
         return "/pages/reglog/test1.jsp";
     }
-    @RequestMapping("")
-    public String tesk(HttpServletRequest request) {
-        System.out.println("**********开始*************");
-
-        return "/pages/reglog/test2.jsp";
-    }
+    //@RequestMapping("")
+    //public String tesk(HttpServletRequest request) {
+    //    System.out.println("**********开始*************");
+    //
+    //    return "/pages/reglog/test2.jsp";
+    //}
 }
