@@ -156,35 +156,6 @@ public class Test {
  * <artifactId>ooxml-schemas</artifactId>
  * <version>1.3</version>
  * </dependency>
- * <p>
- * <p>
- * <mirror>
- * <id>alimaven</id>
- * <name>aliyun maven</name>
- * <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
- * <mirrorOf>central</mirrorOf>
- * </mirror>
- * <p>
- * <mirror>
- * <id>alimaven</id>
- * <name>aliyun maven</name>
- * <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
- * <mirrorOf>central</mirrorOf>
- * </mirror>
- * <p>
- * <mirror>
- * <id>alimaven</id>
- * <name>aliyun maven</name>
- * <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
- * <mirrorOf>central</mirrorOf>
- * </mirror>
- * <p>
- * <mirror>
- * <id>alimaven</id>
- * <name>aliyun maven</name>
- * <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
- * <mirrorOf>central</mirrorOf>
- * </mirror>
  */
 
 /**
